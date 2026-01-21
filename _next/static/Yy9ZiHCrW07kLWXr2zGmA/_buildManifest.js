@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/msys-dx-adapters-docs//_next/:path+",
+        "destination": "/msys-dx-adapters-docs/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
