@@ -1,10 +1,13 @@
 export default {
-  logo: <span>MSYS DX Adapters</span>,
-  head: {
-    title: 'MSYS DX Adapters',
-  },
+  logo: <span>MSYS DX Adapters Docs</span>,
   project: {
-    link: 'https://github.com',
+    link: 'https://github.com/msys-winactor/msys-dx-adapters-docs',
   },
-  docsRepositoryBase: 'https://github.com',
+  docsRepositoryBase: 'https://github.com/msys-winactor/msys-dx-adapters-docs/tree/main',
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – MSYS DX Adapters'
+    }
+  },
 }
+

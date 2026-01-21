@@ -1,18 +1,22 @@
 import nextra from 'nextra'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
   output: 'export',
-  basePath: '/msys-dx-adapters-docs',
+  assetPrefix: isProd ? '/msys-dx-adapters-docs' : '',
+  basePath: isProd ? '/msys-dx-adapters-docs' : '',
   images: {
     unoptimized: true // 必須
+  },
+  experimental: {
+    optimizePackageImports: ['nextra-theme-docs']
   }
 }
 
-const withNextra = nextra({
-  // ... Add Nextra-specific options here
-})
+const withNextra = nextra({})
 
 export default withNextra(nextConfig)
