@@ -1,2 +1,2 @@
-:HL["/msys-dx-adapters-docs/_next/static/chunks/b36ed718c2b7e3a6.css","style"]
-0:{"buildId":"Vzw0urtB0d9KyDpZwgxv8","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/msys-dx-adapters-docs/_next/static/chunks/48604324e04f6457.css","style"]
+0:{"buildId":"205RhtWaOf22zxHQEN5Ug","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
