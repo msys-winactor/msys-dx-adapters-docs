@@ -19,6 +19,12 @@
   --ifm-color-primary-lighter: #3399ff;
   --ifm-color-primary-lightest: #66b3ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* 青みがかったダークグレー背景 */
+  --ifm-background-color: #1a1d2e;
+  --ifm-background-surface-color: #21243a;
+  --ifm-navbar-background-color: #1a1d2e;
+  --ifm-footer-background-color: #14161f;
 }
 
 /* Footer customization */
@@ -28,4 +34,45 @@
 
 .footer__copyright {
   font-size: 0.875rem;
+}
+
+/* Heading styles */
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--ifm-color-primary);
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-300);
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-primary);
+}
+
+.markdown h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown h5,
+.markdown h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }

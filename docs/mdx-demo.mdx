@@ -100,6 +100,67 @@ Docusaurus は MDX v3 を標準でサポートしています。
 インタラクティブなコンポーネントでは React の state を使用できます。
 :::
 
+## 画像の埋め込み
+
+### 静的画像（static フォルダ）
+
+`static/img/` フォルダに配置した画像は、ルートパスから直接参照できます：
+
+```markdown
+![Docusaurus logo](/img/docusaurus.png)
+```
+
+![Docusaurus logo](https://docusaurus.io/img/docusaurus.png)
+
+### インライン画像（相対パス）
+
+ドキュメントと同じディレクトリに配置した画像：
+
+```markdown
+![説明テキスト](./image.png)
+```
+
+
+### 外部画像（URL）
+
+```markdown
+![プレースホルダー](https://via.placeholder.com/400x200?text=Sample+Image)
+```
+
+![プレースホルダー](https://via.placeholder.com/400x200?text=Sample+Image)
+
+### JSX での画像埋め込み
+
+export const ImageWithCaption = ({src, alt, caption}) => (
+  <figure style={{textAlign: 'center', margin: '2rem 0'}}>
+    <img 
+      src={src} 
+      alt={alt}
+      style={{
+        maxWidth: '100%',
+        border: '1px solid var(--ifm-color-emphasis-300)',
+        borderRadius: '8px',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+      }}
+    />
+    {caption && (
+      <figcaption style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: 'var(--ifm-color-emphasis-600)'
+      }}>
+        {caption}
+      </figcaption>
+    )}
+  </figure>
+);
+
+<ImageWithCaption 
+  src="https://via.placeholder.com/600x300?text=Custom+Component+Image"
+  alt="カスタムコンポーネントの画像例"
+  caption="図1: React コンポーネントで画像を表示"
+/>
+
 ## まとめ
 
 MDX v3 では以下が可能です：
