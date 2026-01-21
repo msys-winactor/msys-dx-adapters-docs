@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# WinActor for WinActor Manager on Cloud
+# 概要
 
 WinActor for WinActor Manager on Cloud (WMC) は、クラウド上でWinActorを管理・運用するためのアダプターです。
 

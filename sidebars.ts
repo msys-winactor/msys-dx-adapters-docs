@@ -13,7 +13,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'WinActor for WinActor Manager on Cloud',
+          label: '概要',
           items: [
             'winactor-wmc/index',
             'winactor-wmc/setup',

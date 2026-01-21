@@ -2,190 +2,109 @@
 sidebar_position: 2
 ---
 
-import React from 'react';
-
 # ライブラリ一覧
 
 WinActor for WinActor Manager on Cloud で利用可能なライブラリの一覧です。
 
-export const LibraryTable = ({data}) => (
-  <div style={{
-    border: '1px solid var(--ifm-color-emphasis-200)',
-    borderRadius: '6px',
-    overflow: 'auto',
-    marginBottom: '2rem'
-  }}>
-    <table style={{
-      margin: 0, 
-      width: '100%', 
-      border: 'none',
-      borderCollapse: 'collapse'
-    }}>
-      <thead>
-        <tr style={{backgroundColor: 'var(--ifm-background-surface-color)'}}>
-          <th style={{width: '60px', textAlign: 'center', padding: '0.75rem 0.5rem', border: 'none', borderBottom: '1px solid var(--ifm-color-emphasis-200)'}}>No</th>
-          <th style={{width: '30%', padding: '0.75rem 1rem', border: 'none', borderBottom: '1px solid var(--ifm-color-emphasis-200)'}}>ライブラリ名称</th>
-          <th style={{padding: '0.75rem 1rem', border: 'none', borderBottom: '1px solid var(--ifm-color-emphasis-200)'}}>機能説明</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item, index) => (
-          <tr key={index}>
-            <td style={{textAlign: 'center', padding: '0.75rem 0.5rem', border: 'none'}}>{item.no}</td>
-            <td style={{padding: '0.75rem 1rem', border: 'none'}}><strong>{item.name}</strong></td>
-            <td style={{padding: '0.75rem 1rem', border: 'none'}}>{item.description}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
+## 認証関連
 
-export const CategorySection = ({title, data}) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  return (
-    <div style={{marginBottom: '1rem'}}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          width: '100%',
-          padding: '0.5rem 0.75rem',
-          backgroundColor: 'var(--ifm-background-surface-color)',
-          border: '2px solid var(--ifm-color-emphasis-200)',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          fontSize: '0.95rem',
-          fontWeight: '500',
-          color: 'var(--ifm-color-emphasis-900)',
-          transition: 'border-color 0.2s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--ifm-color-primary)'}
-        onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--ifm-color-emphasis-200)'}
-      >
-        <span>{title} ({data.length}件)</span>
-        <span style={{fontSize: '0.75rem', transition: 'transform 0.2s ease', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}}>▼</span>
-      </button>
-      {isOpen && (
-        <div style={{marginTop: '0.75rem'}}>
-          <LibraryTable data={data} />
-        </div>
-      )}
-    </div>
-  );
-};
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(アクセストークン取得)](libraries/access-token) | アクセストークンの取得を行います。 |
 
-<CategorySection
-  title="認証関連"
-  data={[
-    {no: 1, name: 'WMC連携(アクセストークン取得)', description: 'アクセストークンの取得を行います。'}
-  ]}
-/>
+## WinActor関連
 
-<CategorySection
-  title="WinActor関連"
-  data={[
-    {no: 1, name: 'WMC連携(WinActor更新)', description: 'WinActorの情報更新を行います。'},
-    {no: 2, name: 'WMC連携(WinActor再起動)', description: 'WinActor再起動を行います。'},
-    {no: 3, name: 'WMC連携(WinActor削除)', description: 'WinActor削除を行います。'},
-    {no: 4, name: 'WMC連携(WinActor情報エクスポート)', description: 'WinActor情報のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 5, name: 'WMC連携(WinActor利用状況エクスポート)', description: 'WinActor利用状況のエクスポートを行います。CSVファイル形式で出力されます。'}
-  ]}
-/>
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(WinActor更新)](libraries/winactor-update) | WinActorの情報更新を行います。 |
+| 2 | [WMC連携(WinActor再起動)](libraries/winactor-restart) | WinActor再起動を行います。 |
+| 3 | [WMC連携(WinActor削除)](libraries/winactor-delete) | WinActor削除を行います。 |
+| 4 | [WMC連携(WinActor情報エクスポート)](libraries/winactor-info-export) | WinActor情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 5 | [WMC連携(WinActor利用状況エクスポート)](libraries/winactor-usage-export) | WinActor利用状況のエクスポートを行います。CSVファイル形式で出力されます。 |
 
-<CategorySection
-  title="ライセンス関連"
-  data={[
-    {no: 1, name: 'WMC連携(FL利用状況エクスポート)', description: 'FL(フローティングライセンス)利用状況のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 2, name: 'WMC連携(ライセンス情報取得)', description: 'ライセンス情報を取得します。'},
-    {no: 3, name: 'WMC連携(ライセンス利用状況取得)', description: 'ライセンス利用状況を取得します。'}
-  ]}
-/>
+## ライセンス関連
 
-<CategorySection
-  title="ファイル関連"
-  data={[
-    {no: 1, name: 'WMC連携(ファイルアップロード)', description: 'ファイルアップロードを行います。'},
-    {no: 2, name: 'WMC連携(ファイルダウンロード)', description: 'ファイルダウンロードを行います。'},
-    {no: 3, name: 'WMC連携(ファイル削除)', description: 'ファイル削除を行います。'},
-    {no: 4, name: 'WMC連携(ファイル情報エクスポート)', description: 'ファイル情報のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 5, name: 'WMC連携(ファイル情報更新)', description: 'ファイル情報の更新を行います。'}
-  ]}
-/>
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(FL利用状況エクスポート)](libraries/fl-usage-export) | FL(フローティングライセンス)利用状況のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 2 | [WMC連携(ライセンス情報取得)](libraries/license-info-get) | ライセンス情報を取得します。 |
+| 3 | [WMC連携(ライセンス利用状況取得)](libraries/license-usage-get) | ライセンス利用状況を取得します。 |
 
-<CategorySection
-  title="シナリオ関連"
-  data={[
-    {no: 1, name: 'WMC連携(シナリオ更新)', description: 'シナリオ更新を行います。'},
-    {no: 2, name: 'WMC連携(シナリオ削除)', description: 'シナリオ削除を行います。'},
-    {no: 3, name: 'WMC連携(シナリオ情報エクスポート)', description: 'シナリオ情報のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 4, name: 'WMC連携(シナリオ登録)', description: 'シナリオ登録を行います。'}
-  ]}
-/>
+## ファイル関連
 
-<CategorySection
-  title="スケジュール関連"
-  data={[
-    {no: 1, name: 'WMC連携(スケジュール更新(月末))', description: 'スケジュール更新(月末)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 2, name: 'WMC連携(スケジュール更新(条件指定))', description: 'スケジュール更新(条件指定)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 3, name: 'WMC連携(スケジュール更新(即時))', description: 'スケジュール更新(即時)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 4, name: 'WMC連携(スケジュール更新(日時指定))', description: 'スケジュール更新(日時指定)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 5, name: 'WMC連携(スケジュール更新(毎月))', description: 'スケジュール更新(毎月)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 6, name: 'WMC連携(スケジュール更新(毎週))', description: 'スケジュール更新(毎週)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 7, name: 'WMC連携(スケジュール更新(毎日))', description: 'スケジュール更新(毎日)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。'},
-    {no: 8, name: 'WMC連携(スケジュール削除)', description: 'スケジュール削除を行います。'},
-    {no: 9, name: 'WMC連携(スケジュール情報エクスポート)', description: 'スケジュール情報のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 10, name: 'WMC連携(スケジュール登録(月末))', description: 'スケジュール登録(月末)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 11, name: 'WMC連携(スケジュール登録(条件指定))', description: 'スケジュール登録(条件指定)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 12, name: 'WMC連携(スケジュール登録(即時))', description: 'スケジュール登録(即時)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 13, name: 'WMC連携(スケジュール登録(日時指定))', description: 'スケジュール登録(日時指定)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 14, name: 'WMC連携(スケジュール登録(毎月))', description: 'スケジュール登録(毎月)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 15, name: 'WMC連携(スケジュール登録(毎週))', description: 'スケジュール登録(毎週)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 16, name: 'WMC連携(スケジュール登録(毎日))', description: 'スケジュール登録(毎日)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。'},
-    {no: 17, name: 'WMC連携(スケジュール無効化)', description: 'スケジュールの無効化を行います。'},
-    {no: 18, name: 'WMC連携(スケジュール有効化)', description: 'スケジュールの有効化を行います。'}
-  ]}
-/>
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(ファイルアップロード)](libraries/file-upload) | ファイルアップロードを行います。 |
+| 2 | [WMC連携(ファイルダウンロード)](libraries/file-download) | ファイルダウンロードを行います。 |
+| 3 | [WMC連携(ファイル削除)](libraries/file-delete) | ファイル削除を行います。 |
+| 4 | [WMC連携(ファイル情報エクスポート)](libraries/file-info-export) | ファイル情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 5 | [WMC連携(ファイル情報更新)](libraries/file-info-update) | ファイル情報の更新を行います。 |
 
-<CategorySection
-  title="タスク関連"
-  data={[
-    {no: 1, name: 'WMC連携(アーカイブファイル登録履歴取得)', description: '指定したタスクIDに紐づくアーカイブファイルの登録履歴情報を取得します。'},
-    {no: 2, name: 'WMC連携(タスク削除)', description: 'タスク削除を行います。'},
-    {no: 3, name: 'WMC連携(タスク情報エクスポート)', description: 'タスク情報のエクスポートを行います。CSVファイル形式で出力されます。'}
-  ]}
-/>
+## シナリオ関連
 
-<CategorySection
-  title="イベント関連"
-  data={[
-    {no: 1, name: 'WMC連携(イベントログ件数取得)', description: 'イベントログの件数を取得します。'},
-    {no: 2, name: 'WMC連携(イベントログ取得)', description: 'イベントログを取得します。'},
-    {no: 3, name: 'WMC連携(イベント情報エクスポート)', description: 'イベント情報のエクスポートを行います。CSVファイル形式で出力されます。'}
-  ]}
-/>
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(シナリオ更新)](libraries/scenario-update) | シナリオ更新を行います。 |
+| 2 | [WMC連携(シナリオ削除)](libraries/scenario-delete) | シナリオ削除を行います。 |
+| 3 | [WMC連携(シナリオ情報エクスポート)](libraries/scenario-info-export) | シナリオ情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 4 | [WMC連携(シナリオ登録)](libraries/scenario-register) | シナリオ登録を行います。 |
 
-<CategorySection
-  title="ユーザ関連"
-  data={[
-    {no: 1, name: 'WMC連携(ユーザ更新)', description: 'ユーザ更新を行います。'},
-    {no: 2, name: 'WMC連携(ユーザ削除)', description: 'ユーザ削除を行います。'},
-    {no: 3, name: 'WMC連携(ユーザ情報インポート)', description: 'ユーザ情報のインポートをCSVファイル形式で行います。処理区分を新規登録、更新、削除から選択します。'},
-    {no: 4, name: 'WMC連携(ユーザ情報エクスポート)', description: 'ユーザ情報のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 5, name: 'WMC連携(ユーザ登録)', description: 'ユーザ登録を行います。'},
-    {no: 6, name: 'WMC連携(承認待ちスケジュール情報エクスポート)', description: '承認待ちスケジュール情報のエクスポートを行います。CSVファイル形式で出力されます。'}
-  ]}
-/>
+## スケジュール関連
 
-<CategorySection
-  title="所属関連"
-  data={[
-    {no: 1, name: 'WMC連携(所属更新)', description: '所属更新を行います。'},
-    {no: 2, name: 'WMC連携(所属削除)', description: '所属削除を行います。'},
-    {no: 3, name: 'WMC連携(所属情報インポート)', description: '所属情報のインポートをCSVファイル形式で行います。処理区分を新規登録、更新、削除から選択します。'},
-    {no: 4, name: 'WMC連携(所属情報エクスポート)', description: '所属情報のエクスポートを行います。CSVファイル形式で出力されます。'},
-    {no: 5, name: 'WMC連携(所属登録)', description: '所属登録を行います。'}
-  ]}
-/>
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(スケジュール更新(月末))](libraries/schedule-update-month-end) | スケジュール更新(月末)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 2 | [WMC連携(スケジュール更新(条件指定))](libraries/schedule-update-condition) | スケジュール更新(条件指定)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 3 | [WMC連携(スケジュール更新(即時))](libraries/schedule-update-immediate) | スケジュール更新(即時)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 4 | [WMC連携(スケジュール更新(日時指定))](libraries/schedule-update-datetime) | スケジュール更新(日時指定)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 5 | [WMC連携(スケジュール更新(毎月))](libraries/schedule-update-monthly) | スケジュール更新(毎月)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 6 | [WMC連携(スケジュール更新(毎週))](libraries/schedule-update-weekly) | スケジュール更新(毎週)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 7 | [WMC連携(スケジュール更新(毎日))](libraries/schedule-update-daily) | スケジュール更新(毎日)を行います。シナリオIDで指定したシナリオに入力パラメータがある場合、エラーになります。 |
+| 8 | [WMC連携(スケジュール削除)](libraries/schedule-delete) | スケジュール削除を行います。 |
+| 9 | [WMC連携(スケジュール情報エクスポート)](libraries/schedule-info-export) | スケジュール情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 10 | [WMC連携(スケジュール登録(月末))](libraries/schedule-register-month-end) | スケジュール登録(月末)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 11 | [WMC連携(スケジュール登録(条件指定))](libraries/schedule-register-condition) | スケジュール登録(条件指定)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 12 | [WMC連携(スケジュール登録(即時))](libraries/schedule-register-immediate) | スケジュール登録(即時)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 13 | [WMC連携(スケジュール登録(日時指定))](libraries/schedule-register-datetime) | スケジュール登録(日時指定)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 14 | [WMC連携(スケジュール登録(毎月))](libraries/schedule-register-monthly) | スケジュール登録(毎月)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 15 | [WMC連携(スケジュール登録(毎週))](libraries/schedule-register-weekly) | スケジュール登録(毎週)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 16 | [WMC連携(スケジュール登録(毎日))](libraries/schedule-register-daily) | スケジュール登録(毎日)を行います。シナリオIDで指定したシナリオに必須の入力パラメータがある場合、エラーになります。 |
+| 17 | [WMC連携(スケジュール無効化)](libraries/schedule-disable) | スケジュールの無効化を行います。 |
+| 18 | [WMC連携(スケジュール有効化)](libraries/schedule-enable) | スケジュールの有効化を行います。 |
+
+## タスク関連
+
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(アーカイブファイル登録履歴取得)](libraries/archive-file-history-get) | 指定したタスクIDに紐づくアーカイブファイルの登録履歴情報を取得します。 |
+| 2 | [WMC連携(タスク削除)](libraries/task-delete) | タスク削除を行います。 |
+| 3 | [WMC連携(タスク情報エクスポート)](libraries/task-info-export) | タスク情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+
+## イベント関連
+
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(イベントログ件数取得)](libraries/event-log-count-get) | イベントログの件数を取得します。 |
+| 2 | [WMC連携(イベントログ取得)](libraries/event-log-get) | イベントログを取得します。 |
+| 3 | [WMC連携(イベント情報エクスポート)](libraries/event-info-export) | イベント情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+
+## ユーザ関連
+
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(ユーザ更新)](libraries/user-update) | ユーザ更新を行います。 |
+| 2 | [WMC連携(ユーザ削除)](libraries/user-delete) | ユーザ削除を行います。 |
+| 3 | [WMC連携(ユーザ情報インポート)](libraries/user-info-import) | ユーザ情報のインポートをCSVファイル形式で行います。処理区分を新規登録、更新、削除から選択します。 |
+| 4 | [WMC連携(ユーザ情報エクスポート)](libraries/user-info-export) | ユーザ情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 5 | [WMC連携(ユーザ登録)](libraries/user-register) | ユーザ登録を行います。 |
+| 6 | [WMC連携(承認待ちスケジュール情報エクスポート)](libraries/pending-schedule-export) | 承認待ちスケジュール情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+
+## 所属関連
+
+| No | ライブラリ名称 | 機能説明 |
+|----|---------------|---------|
+| 1 | [WMC連携(所属更新)](libraries/department-update) | 所属更新を行います。 |
+| 2 | [WMC連携(所属削除)](libraries/department-delete) | 所属削除を行います。 |
+| 3 | [WMC連携(所属情報インポート)](libraries/department-info-import) | 所属情報のインポートをCSVファイル形式で行います。処理区分を新規登録、更新、削除から選択します。 |
+| 4 | [WMC連携(所属情報エクスポート)](libraries/department-info-export) | 所属情報のエクスポートを行います。CSVファイル形式で出力されます。 |
+| 5 | [WMC連携(所属登録)](libraries/department-register) | 所属登録を行います。 |
