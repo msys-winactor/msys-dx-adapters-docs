@@ -1,0 +1,111 @@
+---
+sidebar_position: 1
+---
+
+import React from 'react';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# MDX v3 サンプルページ
+
+MDX v3 の様々な機能をデモンストレーションします。
+
+## インタラクティブなコンポーネント
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem 0.5rem',
+    }}>
+    {children}
+  </span>
+);
+
+これは <Highlight color="#25c2a0">緑色</Highlight> と <Highlight color="#1877F2">青色</Highlight> のハイライトです。
+
+## タブコンポーネント
+
+<Tabs>
+  <TabItem value="js" label="JavaScript" default>
+    ```js
+    function helloWorld() {
+      console.log('Hello, world!');
+    }
+    ```
+  </TabItem>
+  <TabItem value="ts" label="TypeScript">
+    ```ts
+    function helloWorld(): void {
+      console.log('Hello, world!');
+    }
+    ```
+  </TabItem>
+  <TabItem value="py" label="Python">
+    ```py
+    def hello_world():
+        print('Hello, world!')
+    ```
+  </TabItem>
+</Tabs>
+
+## カスタムコンポーネント
+
+export const ButtonDemo = () => {
+  const [count, setCount] = React.useState(0);
+  return (
+    <div style={{
+      padding: '20px',
+      border: '2px solid var(--ifm-color-primary)',
+      borderRadius: '8px',
+      textAlign: 'center'
+    }}>
+      <p>ボタンがクリックされた回数: <strong>{count}</strong></p>
+      <button
+        onClick={() => setCount(count + 1)}
+        style={{
+          backgroundColor: 'var(--ifm-color-primary)',
+          color: 'white',
+          border: 'none',
+          padding: '10px 20px',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          fontSize: '16px'
+        }}>
+        クリック
+      </button>
+    </div>
+  );
+};
+
+<ButtonDemo />
+
+## アラートボックス
+
+:::tip ヒント
+MDX では JSX と Markdown を組み合わせて使用できます。
+:::
+
+:::info 情報
+Docusaurus は MDX v3 を標準でサポートしています。
+:::
+
+:::warning 注意
+カスタムコンポーネントは `export` キーワードで定義します。
+:::
+
+:::danger 重要
+インタラクティブなコンポーネントでは React の state を使用できます。
+:::
+
+## まとめ
+
+MDX v3 では以下が可能です：
+
+- ✨ JSX と Markdown のシームレスな統合
+- 🎨 カスタムコンポーネントの定義
+- 🔥 React の state/hooks の使用
+- 📊 インタラクティブなデータ可視化
+- 🚀 高速なビルドとホットリロード
