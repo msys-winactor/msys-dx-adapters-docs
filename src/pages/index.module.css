@@ -1,21 +1,82 @@
 .hero {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 3rem;
   text-align: center;
-  background-color: var(--ifm-color-primary-lightest);
+  background: linear-gradient(180deg, var(--ifm-background-surface-color) 0%, var(--ifm-background-color) 100%);
 }
 
 .heroTitle {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  letter-spacing: -0.025em;
 }
 
 .heroSubtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  margin-bottom: 0;
+  color: var(--ifm-color-emphasis-700);
 }
 
-.buttons {
+.products {
+  padding: 3rem 2rem 4rem;
+}
+
+.productsHeading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.productGrid {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
   justify-content: center;
-  gap: 1rem;
+}
+
+.productCard {
+  display: block;
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease;
+  background-color: var(--ifm-background-surface-color);
+  flex: 1 1 0;
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.productCard:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.productPrefix {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.productTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.productDescription {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
 }

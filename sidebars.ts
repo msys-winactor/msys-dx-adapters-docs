@@ -18,6 +18,7 @@ const sidebars: SidebarsConfig = {
             'winactor-wmc/index',
             'winactor-wmc/setup',
             'winactor-wmc/usage',
+            'winactor-wmc/library-list',
           ],
         },
       ],

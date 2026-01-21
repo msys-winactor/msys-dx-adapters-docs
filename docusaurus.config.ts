@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'MSYS DX Adapters',
-  tagline: 'MSYS DX Adaptersの製品マニュアルサイトです。',
+  tagline: '',
   favicon: 'img/favicon.ico',
 
   url: 'https://msys-winactor.github.io',
@@ -33,10 +33,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/msys-winactor/msys-dx-adapters-docs/tree/main/',
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -45,15 +42,61 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'wmc',
+        path: 'docs-wmc',
+        routeBasePath: 'wmc',
+        sidebarPath: './sidebars-wmc.ts',
+        editUrl: 'https://github.com/msys-winactor/msys-dx-adapters-docs/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'box',
+        path: 'docs-box',
+        routeBasePath: 'box',
+        sidebarPath: './sidebars-box.ts',
+        editUrl: 'https://github.com/msys-winactor/msys-dx-adapters-docs/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'kintone',
+        path: 'docs-kintone',
+        routeBasePath: 'kintone',
+        sidebarPath: './sidebars-kintone.ts',
+        editUrl: 'https://github.com/msys-winactor/msys-dx-adapters-docs/tree/main/',
+      },
+    ],
+  ],
+
   themeConfig: {
     navbar: {
       title: 'MSYS DX Adapters',
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          type: 'dropdown',
+          label: '製品',
           position: 'left',
-          label: 'ドキュメント',
+          items: [
+            {
+              label: 'WinActor for Manager on Cloud',
+              to: '/wmc/intro',
+            },
+            {
+              label: 'WinActor for Box',
+              to: '/box/intro',
+            },
+            {
+              label: 'WinActor for kintone',
+              to: '/kintone/intro',
+            },
+          ],
         },
         {
           href: 'https://github.com/msys-winactor/msys-dx-adapters-docs',

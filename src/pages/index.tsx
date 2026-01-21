@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
@@ -20,11 +19,23 @@ export default function Home(): JSX.Element {
               {siteConfig.title}
             </Heading>
             <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
-            <div className={styles.buttons}>
-              <Link
-                className="button button--primary button--lg"
-                to="/docs/intro">
-                製品マニュアル
+          </div>
+        </div>
+        <div className={styles.products}>
+          <div className="container">
+            <h2 className={styles.productsHeading}>製品マニュアル</h2>
+            <div className={styles.productGrid}>
+              <Link className={styles.productCard} to="/msys-dx-adapters-docs/wmc/intro">
+                <span className={styles.productPrefix}>WinActor for</span>
+                <h3 className={styles.productTitle}>Manager on Cloud</h3>
+              </Link>
+              <Link className={styles.productCard} to="/msys-dx-adapters-docs/box/intro">
+                <span className={styles.productPrefix}>WinActor for</span>
+                <h3 className={styles.productTitle}>Box</h3>
+              </Link>
+              <Link className={styles.productCard} to="/msys-dx-adapters-docs/kintone/intro">
+                <span className={styles.productPrefix}>WinActor for</span>
+                <h3 className={styles.productTitle}>kintone</h3>
               </Link>
             </div>
           </div>
